@@ -34,6 +34,8 @@ public abstract class Statement extends ASTNode implements StatementConstants {
 	public boolean equals(Object obj) {
 		if (obj == this)
 			return true;
+		if (this.getClass() != obj.getClass())
+			return false;
 		if (obj instanceof Statement) {
 			Statement s = (Statement) obj;
 			if (s.sourceEnd() < 0 || s.sourceStart() < 0) {
